@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box !important;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* SECTION-1 :- HOME SECTION */
+#home-section nav {
+  max-width: 1500px;
+  background-color: #071e29 !important;
+}
+#home-section nav .logo {
+  color: #11e7ff;
+}
+#home-section nav form {
+  position: absolute;
+  width: calc(100% - 126px);
+  left: 122px;
+}
+#home-section nav form input {
+  background-color: #d4d4d4;
+  width: calc(100% - 390px);
+  margin-right: 0PX !important;
+  border-radius: 0.25rem 0px 0px 0.25rem;
+}
+#home-section nav form button {
+  color: #11e7ff;
+  width: 145px;
+  border-radius: 0px;
+  padding: 0px !important;
+  border-color: #11e7ff;
+  border-left: none;
+}
+#home-section nav form button i {
+  margin: 0px 8px;
+}
+#home-section nav .user {
+  color: #11e7ff;
+}
+#home-section nav .user button {
+  border: none;
+  color: #11e7ff;
+}
+#home-section nav .user button i {
+  margin: 0px 6px;
+  font-size: 23px;
+}
+#home-section .nav-2 {
+  background-color: #0a2c3c !important;
+}
+#home-section .nav-2 .bars {
+  color: #11e7ff;
+  font-size: 26px;
+}
+
+@media (min-width: 1500px) {
+  #home-section {
+    margin: 0px calc(50vw - 750px) !important;
+  }
+}

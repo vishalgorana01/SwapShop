@@ -1,0 +1,82 @@
+*{
+    box-sizing: border-box !important;
+    margin: 0px;
+    padding: 0px;
+    // color: white !important;
+}
+
+$primary-color : #11e7ff;
+/* SECTION-1 :- HOME SECTION */
+
+#home-section{
+
+    nav{
+        max-width: 1500px;
+        // background-color: #17324d !important;
+        background-color: #071e29 !important;
+
+        .logo{
+            color: $primary-color;
+        }
+
+        form{
+            position: absolute;
+            width: calc(100% - 126px);
+            left: 122px;
+
+            input{
+                background-color: #d4d4d4;
+                width: calc(100% - 390px);
+                margin-right: 0PX !important;
+                border-radius: 0.25rem 0px 0px 0.25rem ;
+            }
+
+            button{
+                color: $primary-color;
+                width: 145px;
+                border-radius: 0px ;
+                padding: 0px !important;
+                border-color: $primary-color ;
+                border-left: none;
+
+                i{
+                    margin: 0px 8px;
+                }
+            }
+        }
+
+        .user{
+            color: $primary-color ;
+
+            button{
+                border: none;
+                color: $primary-color;
+
+                i{
+                    margin: 0px 6px;
+                    font-size: 23px;
+                }
+            }
+        }
+    }
+
+    .nav-2{
+        background-color: #0a2c3c !important;
+
+        .bars{
+            color: #11e7ff;
+            font-size: 26px;
+        }
+    }
+}
+
+@media (max-width: 800px) {
+
+    
+}
+
+@media (min-width: 1500px) {
+    #home-section{
+        margin: 0px calc(50vw - 750px) !important;
+    }
+}
