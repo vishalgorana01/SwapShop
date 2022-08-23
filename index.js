@@ -1,19 +1,33 @@
 console.log("Hello, this is me");
 
+localStorage.clear();
+// localStorage.setItem(a,)
+
 let Categories = document.getElementById("Categories");
 let Categories_arrow = document.getElementById("Categories_arrow");
 let ele = document.createElement('div');
-ele.innerHTML = `<ul><li>Men's</li>
-<li>Sneaker's</li>
-<li>Formal</li>
-<li>Sportss</li>
-<li>School</li>
-<li>Men's Shoes</li>
-<li>Regular</li>
-<li>boys</li>
-<li>Kids</li>
-<li>Girls</li>
+ele.innerHTML = `<ul><li onClick="window.location.href='explore.html#Mens';">Men's</li>
+<li onClick="window.location.href='explore.html#Sneakers';">Sneaker's</li>
+<li style="z-index: 3;" onClick="window.location.href='explore.html#Formals';">Formal</li>
+<li onClick="window.location.href='explore.html#Sports';">Sports</li>
+<li onClick="window.location.href='explore.html#school_shoes';">School</li>
+<li onClick="window.location.href='explore.html#Mens';">Men's Shoes</li>
+<li onClick="window.location.href='index.html#Regular_shoes';">Regular</li>
+<li onClick="window.location.href='explore.html#Boys_shoes';">boys</li>
+<li onClick="window.location.href='explore.html#kids_shoes';">Kids</li>
+<li onClick="window.location.href='explore.html#Girls_shoe';">Girls</li>
+<li onClick="window.location.href='explore.html';">All Categories</li>
 </ul>`;
+
+// console.log(typeof(ele.firstElementChild.children));
+let categories_list = ele.firstElementChild.children;
+
+for(let i=0; i<categories_list.length; i++){
+    categories_list[i].addEventListener('click', function(){
+        let categ = categories_list[i].textContent;
+        Categories.firstChild.textContent = categ;
+    })
+}
 
 let search_categories = true;
 Categories.addEventListener('click' , function(){
@@ -29,3 +43,272 @@ Categories.addEventListener('click' , function(){
         search_categories = true;
     }
 });
+
+
+let cover_page = document.querySelector(".cover_of_login_page");// -----------> Background blur page
+
+let sign_in = document.getElementById("sign_in"); // -----> sign in button
+
+let login_page = document.createElement("div"); // -----> login page created
+login_page.setAttribute("class", "login_page"); // -----> set class to login page
+
+// make html of login page
+login_page.innerHTML = `<a href="#" id="x_mark"><i class="fa-solid fa-xmark"></i></a> 
+
+<div class="right">
+  <h4>SwapShop</h4>
+  <h6>Welcome to SwapShop</h6>
+  <input type="email" placeholder="email, username, or id">
+  <input type="password" placeholder="password">
+  <button class="btn" type="button">login</button>
+  <button id="sign_up" class="btn" type="button">sign up</button>
+</div>
+
+<div class="left">
+  <img src="./images/tying-sport-shoes-outdoors_236854-13785.jpg" alt="" srcset="">
+</div>`;
+
+
+
+cover_page.style.display = "none";
+
+// add eventlistener to sign in button
+sign_in.addEventListener("click" , function(){
+    cover_page.style.display = "flex";
+    cover_page.appendChild(login_page);
+});
+
+// add eventlistener to cross mark of login_page
+login_page.firstChild.addEventListener("click", function(){
+    // login_page.style.transform = "translateY(-100%)";
+    cover_page.removeChild(login_page);
+    cover_page.style.display = "none";
+});
+
+
+let register_page = document.createElement("div"); // ---------> register_page created
+register_page.setAttribute("class", "register_page"); // --------> set class to register_page
+
+// make html of register_page
+register_page.innerHTML = `<a href="#"><i class="fa-solid fa-xmark"></i></a>
+<div class="left">
+  <img src="./images/tying-sport-shoes-outdoors_236854-13785.jpg" alt="" srcset="">
+</div>
+
+<div class="right">
+  <h4>SwapShop</h4>
+  <h6>Welcome to SwapShop</h6>
+  <input type="text" placeholder="Name"><input type="text" placeholder="Last Name">
+  <input type="email" placeholder="email, username, or id">
+  <input type="password" placeholder="password" >
+  <button class="btn" type="button">Register</button>
+</div>`;
+
+// add eventlistener to sign Up button of login_page
+login_page.children[1].children[5].addEventListener("click", function(){
+register_page.style.display = "flex";
+
+login_page.children[1].children[2].value = "";
+login_page.children[1].children[3].value = "";
+
+    cover_page.removeChild(login_page);
+    cover_page.appendChild(register_page);
+})
+
+// add eventlistener to cross of register page
+register_page.children[0].addEventListener("click", function(){
+    console.log("hi");
+    cover_page.removeChild(register_page);
+    cover_page.style.display = "none";
+});
+
+
+// *****************************************************************************************************************
+let users = [];
+
+let user = {
+    id : "vishal",
+    password : "gorana"
+}
+
+let a = "";
+// users.push(user);
+
+localStorage.setItem(a, JSON.stringify(user));
+// users = (JSON.parse(localStorage.getItem(a)));
+
+
+// add eventlistener to register button of register page
+
+register_page.children[2].children[6].addEventListener("click", function(){
+
+    for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
+
+        let prev_type = [];
+        var check2 = true;
+
+        if(register_page.children[2].children[i].value == ''){
+            if(register_page.children[2].children[i].type == "password"){
+                prev_type[i] = 0;
+                register_page.children[2].children[i].type = "text";
+                register_page.children[2].children[i].style.color = "red";
+                register_page.children[2].children[i].value = "fill this field";
+            }
+            else{
+                prev_type[i] = 1;
+                register_page.children[2].children[i].value = 'fill this field';
+                register_page.children[2].children[i].style.color = "red";
+            }
+        }
+
+        if(register_page.children[2].children[i].value == "fill this field"){
+            check2 = false;
+        }
+
+        register_page.children[2].children[i].addEventListener("click", ()=>{
+        
+            if(register_page.children[2].children[i].type == "text" && prev_type[i] == 0){
+                register_page.children[2].children[i].type = "password";
+                register_page.children[2].children[i].style.color = "black";
+                register_page.children[2].children[i].value = "";
+            }
+            else{
+                register_page.children[2].children[i].value = '';
+                register_page.children[2].children[i].style.color = "black";
+            }
+        })
+
+
+}
+
+if(check2 == true){
+    user.id = register_page.children[2].children[4].value ;
+    user.password = register_page.children[2].children[5].value ;
+
+    // users.push(user);
+
+    localStorage.setItem(a, JSON.stringify(user));
+    for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
+        register_page.children[2].children[i].value = '';
+    }
+
+    cover_page.removeChild(register_page);
+    cover_page.appendChild(login_page);
+}
+});
+
+
+// add eventlistener to login button of login page
+login_page.children[1].children[4].addEventListener("click", function(){
+    let b = JSON.parse(localStorage.getItem(a));
+    if(login_page.children[1].children[2].value == b.id && login_page.children[1].children[3].value == b.password){
+        window.location.href="index.html";
+        cover_page.style.display = "none";
+        alert("You are successfully logged in");
+        cover_page.removeChild(login_page);
+    }
+
+    // if((login_page.children[1].children[2].value != '' && login_page.children[1].children[3].value != '') && (login_page.children[1].children[2].value != "fill this field" && login_page.children[1].children[3].value != "fill this field")){
+    //     // localStorage.setItem()
+    // }
+
+    if(login_page.children[1].children[2].value != '' && login_page.children[1].children[2].value != "fill this field"){
+        login_page.children[1].children[2].style.color = "red";
+        login_page.children[1].children[2].value = 'incorrect email, username or id';
+    }
+
+    if(login_page.children[1].children[3].value != '' && login_page.children[1].children[3].value != "fill this field"){
+        login_page.children[1].children[3].style.color = "red";
+        login_page.children[1].children[3].value = 'Password is incorrect';
+    }
+
+    if(login_page.children[1].children[2].value == ''){
+        login_page.children[1].children[2].style.color = "red";
+        login_page.children[1].children[2].value = "fill this field";
+    }
+    
+    if(login_page.children[1].children[3].value == ''){
+        login_page.children[1].children[3].type = "text";
+        login_page.children[1].children[3].style.color = "red";
+        login_page.children[1].children[3].value = "fill this field";
+    }
+
+    login_page.children[1].children[2].addEventListener("click", ()=>{
+        login_page.children[1].children[2].value = '';
+        login_page.children[1].children[2].style.color = "black";
+    })
+
+
+    login_page.children[1].children[3].addEventListener("click", ()=>{
+        login_page.children[1].children[3].value = '';
+        login_page.children[1].children[3].style.color = "black";
+        login_page.children[1].children[3].type = "password";
+    })
+
+})
+
+//  ************* toggle button ************
+let toggle2 = document.getElementById("toggle_2");
+let toggle_body = document.querySelector("#toggle_body");
+toggle_body.innerHTML = `  <div class="toggle_content">
+<ul>
+  <li><a href="#" onclick="document.location.href=login_page"><i class="fa-solid fa-angle-right"></i>My Accont</a></li>
+  <li><a href="#index.html"><i class="fa-solid fa-angle-right"></i>Home</a></li>
+  <li><a href="#inex.html"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
+  <li><a href="#section-5"><i class="fa-solid fa-angle-right"></i>Contact us </a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>Offers</a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>CashPrizes</a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>Your Orders</a></li>
+  <li><a href="#section-3" onclick="document.location.href='index.html#section-3' "><i class="fa-solid fa-angle-right"></i>Today's deal</a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>Settings</a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>Help</a></li>      
+</ul>
+
+<a id="back_mark"><i class="fa-solid fa-arrow-left"></i></a>
+</div>`;
+
+toggle_body.style.transform = "translateX(-7000px)";
+toggle_body.style.transition = "0.3s linear";
+
+toggle2.addEventListener("click", function(){
+    toggle_body.style.transform = "translateX(0px)";
+});
+
+let back_mark = document.getElementById("back_mark");
+    back_mark.addEventListener("click", function(){
+    toggle_body.style.transform = "translateX(-7000px)";
+})
+
+let toggle1 = document.getElementById("toggle-1");
+
+toggle1.addEventListener("click", function(){
+    toggle_body.style.transform = "translateX(0px)";
+});
+
+//  Description page 
+let cards = document.querySelectorAll(".card");
+console.log(cards);
+
+let change;
+
+for(let source of cards){
+    source.addEventListener("click", function(){
+        console.log(source);
+        document.location.href = "product.html";   
+    });
+}
+
+let product_left_div = document.getElementById("product_img");
+
+for(let i=0; i<4; i++){
+    // product_left_div.children[i];
+}
+
+let product_right_div = document.getElementById("product_content");
+
+for(let i=0; i<6; i++){
+    //   product_right_div.children[i];
+}
+
+// ******* saved login ***********
+

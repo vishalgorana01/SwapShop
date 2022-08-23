@@ -1,0 +1,109 @@
+.container-2{
+    align-items: flex-start !important;
+    /* border: 2px solid black !important; */
+}
+
+.upper_part{
+    align-items: flex-start !important;
+    /* border: 2px solid black !important; */
+    /* text-align: start; */
+    margin-bottom: 0px !important;
+}
+
+.upper_part h1{
+    text-align: start !important;
+    letter-spacing: 0px !important;
+}
+
+.shoes_heading{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.lower_part{
+    display: grid !important;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+}
+
+.card{
+    width: 184px !important;
+}
+
+.card img{
+    height: 100px !important;
+    width: 150px !important;
+}
+
+.explore{
+    width: 150px !important;
+}
+
+.explore a{
+    width: 120px !important;
+}
+
+.explore a h6{
+    width: 100% !important;
+    font-size: 18px !important;
+}
+
+@media (max-width: 1169px) {
+    .lower_part{
+        grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .card{
+        width: 90% !important;
+    }
+
+    .upper_part h1{
+        margin-left: 20px !important;
+    }
+}
+
+@media (max-width: 700px) {
+    .lower_part{
+        grid-template-columns: 1fr 1fr !important;
+    }
+
+    .card{
+        width: 80%;
+        margin: 20px auto !important;
+    }
+
+    .upper_part h1{
+        font-size: 28px !important;
+    }
+
+    .shoes_heading{
+        font-size: 24px !important;
+    }
+
+    .none{
+        display: none !important;
+    }
+}
+
+@media (max-width: 490px) {
+    .lower_part{
+        grid-template-columns: 1fr !important;
+    }
+
+    .card{
+        width: 63% !important;
+        margin: 20px auto !important;
+    }
+
+    .upper_part h1{
+        font-size: 22px !important;
+    }
+
+    .shoes_heading{
+        font-size: 18px !important;
+    }
+
+    .explore{
+        margin: 10px auto !important;
+    }
+}
