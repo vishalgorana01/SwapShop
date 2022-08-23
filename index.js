@@ -252,7 +252,7 @@ let toggle2 = document.getElementById("toggle_2");
 let toggle_body = document.querySelector("#toggle_body");
 toggle_body.innerHTML = `  <div class="toggle_content">
 <ul>
-  <li><a href="#" onclick="document.location.href=login_page"><i class="fa-solid fa-angle-right"></i>My Accont</a></li>
+  <li><a href="#"><i class="fa-solid fa-angle-right"></i>My Accont</a></li>
   <li><a href="#index.html"><i class="fa-solid fa-angle-right"></i>Home</a></li>
   <li><a href="#inex.html"><i class="fa-solid fa-angle-right"></i>About Us</a></li>
   <li><a href="#section-5"><i class="fa-solid fa-angle-right"></i>Contact us </a></li>
@@ -278,6 +278,14 @@ let back_mark = document.getElementById("back_mark");
     back_mark.addEventListener("click", function(){
     toggle_body.style.transform = "translateX(-7000px)";
 })
+
+for(let i=0; i<toggle_body.children[0].children[0].childElementCount; i++){
+    toggle_body.children[0].children[0].children[i].addEventListener("click", function(){
+        if(screen.width <= 400){
+            toggle_body.style.transform = "translateX(-7000px)";
+        }
+    });
+}
 
 let toggle1 = document.getElementById("toggle-1");
 
