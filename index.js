@@ -1,6 +1,6 @@
 console.log("Hello, this is me");
 
-localStorage.clear();
+// localStorage.clear();
 // localStorage.setItem(a,)
 
 let Categories = document.getElementById("Categories");
@@ -124,19 +124,25 @@ register_page.children[0].addEventListener("click", function(){
 
 
 // *****************************************************************************************************************
-let users = [];
+let users = {
+    id : ["vishal"],
+    password : ["gorana"]
+};
 
 let user = {
-    id : "vishal",
-    password : "gorana"
+    id : "",
+    password : ""
 }
 
 let a = "";
-// users.push(user);
 
-localStorage.setItem(a, JSON.stringify(user));
-// users = (JSON.parse(localStorage.getItem(a)));
+if(localStorage.length == 0){
+localStorage.setItem(a, JSON.stringify(users));
+}
 
+users.id = JSON.parse(localStorage.getItem(a)).id;
+users.password = JSON.parse(localStorage.getItem(a)).password;
+    
 
 // add eventlistener to register button of register page
 
@@ -185,9 +191,11 @@ if(check2 == true){
     user.id = register_page.children[2].children[4].value ;
     user.password = register_page.children[2].children[5].value ;
 
-    // users.push(user);
+    users.id.push(user.id);
+    users.password.push(user.password);
+    
+    localStorage.setItem(a, JSON.stringify(users));
 
-    localStorage.setItem(a, JSON.stringify(user));
     for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
         register_page.children[2].children[i].value = '';
     }
@@ -200,13 +208,23 @@ if(check2 == true){
 
 // add eventlistener to login button of login page
 login_page.children[1].children[4].addEventListener("click", function(){
-    let b = JSON.parse(localStorage.getItem(a));
-    if(login_page.children[1].children[2].value == b.id && login_page.children[1].children[3].value == b.password){
-        window.location.href="index.html";
-        cover_page.style.display = "none";
-        alert("You are successfully logged in");
-        cover_page.removeChild(login_page);
+    // let b = JSON.parse(localStorage.getItem(a));
+
+    for(let i=0; i<users.id.length; i++){
+        if(login_page.children[1].children[2].value == users.id[i] && login_page.children[1].children[3].value == users.password[i]){
+            window.location.href="index.html";
+            cover_page.style.display = "none";
+            alert("You are successfully logged in");
+            cover_page.removeChild(login_page);
+        }
     }
+
+    // if(login_page.children[1].children[2].value == b.id && login_page.children[1].children[3].value == b.password){
+    //     window.location.href="index.html";
+    //     cover_page.style.display = "none";
+    //     alert("You are successfully logged in");
+    //     cover_page.removeChild(login_page);
+    // }
 
     // if((login_page.children[1].children[2].value != '' && login_page.children[1].children[3].value != '') && (login_page.children[1].children[2].value != "fill this field" && login_page.children[1].children[3].value != "fill this field")){
     //     // localStorage.setItem()
@@ -319,4 +337,9 @@ for(let i=0; i<6; i++){
 }
 
 // ******* saved login ***********
+
+// let saved_users = users ;
+
+// exports.saved_users = users;
+// let saved_users = users;
 
