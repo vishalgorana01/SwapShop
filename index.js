@@ -124,7 +124,7 @@ register_page.children[0].addEventListener("click", function(){
 
 
 // *****************************************************************************************************************
-let users = {
+let all_users = {
     id : ["vishal"],
     password : ["gorana"]
 };
@@ -137,11 +137,11 @@ let user = {
 let a = "";
 
 if(localStorage.length == 0){
-localStorage.setItem(a, JSON.stringify(users));
+localStorage.setItem(a, JSON.stringify(all_users));
 }
 
-users.id = JSON.parse(localStorage.getItem(a)).id;
-users.password = JSON.parse(localStorage.getItem(a)).password;
+all_users.id = JSON.parse(localStorage.getItem(a)).id;
+all_users.password = JSON.parse(localStorage.getItem(a)).password;
     
 
 // add eventlistener to register button of register page
@@ -191,10 +191,11 @@ if(check2 == true){
     user.id = register_page.children[2].children[4].value ;
     user.password = register_page.children[2].children[5].value ;
 
-    users.id.push(user.id);
-    users.password.push(user.password);
+    all_users.id.push(user.id);
+    all_users.password.push(user.password);
+ 
     
-    localStorage.setItem(a, JSON.stringify(users));
+    localStorage.setItem(a, JSON.stringify(all_users));
 
     for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
         register_page.children[2].children[i].value = '';
@@ -210,8 +211,8 @@ if(check2 == true){
 login_page.children[1].children[4].addEventListener("click", function(){
     // let b = JSON.parse(localStorage.getItem(a));
 
-    for(let i=0; i<users.id.length; i++){
-        if(login_page.children[1].children[2].value == users.id[i] && login_page.children[1].children[3].value == users.password[i]){
+    for(let i=0; i<all_users.id.length; i++){
+        if(login_page.children[1].children[2].value == all_users.id[i] && login_page.children[1].children[3].value == all_users.password[i]){
             window.location.href="index.html";
             cover_page.style.display = "none";
             alert("You are successfully logged in");
