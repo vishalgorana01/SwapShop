@@ -144,7 +144,7 @@ let user = {
 
 const set=0;
 
-if(localStorage.length == 0){
+if(localStorage.getItem(set) == null){
 localStorage.setItem(set, JSON.stringify(all_users));
 }
 
