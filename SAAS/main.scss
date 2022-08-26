@@ -290,7 +290,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
                 h5{
                     margin-bottom: 3px;
-                    letter-spacing: 2px;
+                    // letter-spacing: 2px;
 
                     i{
                         color: yellow;
@@ -868,14 +868,14 @@ footer{
                 // }
             }
 
-            ::placeholder{
-                font-size: 16px;
-            }
+            // ::placeholder{
+            //     font-size: 16px;
+            // }
 
-            :active{
-                font-size: 1px;
-                background-color: #071e2907;
-            }
+            // :active{
+            //     font-size: 1px;
+            //     background-color: #071e2907;
+            // }
 
             button{
                 background-color: #071e29;
@@ -956,14 +956,14 @@ footer{
                 // }
             }
 
-            ::placeholder{
-                font-size: 16px;
-            }
+            // ::placeholder{
+            //     font-size: 16px;
+            // }
 
-            :active{
-                font-size: 1px;
-                background-color: #071e2907;
-            }
+            // :active{
+            //     font-size: 1px;
+            //     background-color: #071e2907;
+            // }
 
             button{
                 background-color: #071e29;
@@ -1446,4 +1446,53 @@ footer{
             }
         }
     }
+}
+
+
+#product_content{
+    h5{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+
+    h6{
+        font-size: 18px;
+
+        :nth-child(5){
+            color: #d4d4d4 !important;
+        }
+
+        i{
+            margin: 10px 3px;
+            color: yellow ;
+        }
+    }
+
+    b{
+        font-size: 14px;
+        font-weight: bolder;
+        margin-bottom: 10px;
+    }
+
+}
+
+//  ******** added to cart **********
+
+.no_of_items{
+    position: absolute !important;
+    height: 17px;
+    @include flex_prop();
+    width: 17px;
+    background-color: #071719;
+    color: #3f51b5;
+    top: 5px;
+    right: 20px;
+    font-weight: bolder;
+    z-index: 1;
+    border-radius: 50%;
+    font-size: 12px;
+    display: none;
 }

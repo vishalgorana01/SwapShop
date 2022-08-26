@@ -1,8 +1,5 @@
 console.log("Hello, this is me");
 
-// localStorage.clear();
-// localStorage.setItem(a,)
-
 let Categories = document.getElementById("Categories");
 let Categories_arrow = document.getElementById("Categories_arrow");
 let ele = document.createElement('div');
@@ -125,8 +122,19 @@ register_page.children[0].addEventListener("click", function(){
 
 // *****************************************************************************************************************
 let all_users = {
+    ['first name']: ["vishal"],
+    ['last name'] : ["vishal"],
     id : ["vishal"],
-    password : ["gorana"]
+    password : ["vishal"],
+    cards_object: {
+        img: "",
+        h5: "",
+        p : "",
+        h5_2 : "",
+        b :"",
+    },
+    cart: 0,
+    card: '',
 };
 
 let user = {
@@ -134,24 +142,24 @@ let user = {
     password : ""
 }
 
-let a = "";
+const set=0;
 
 if(localStorage.length == 0){
-localStorage.setItem(a, JSON.stringify(all_users));
+localStorage.setItem(set, JSON.stringify(all_users));
 }
 
-all_users.id = JSON.parse(localStorage.getItem(a)).id;
-all_users.password = JSON.parse(localStorage.getItem(a)).password;
+all_users.id = JSON.parse(localStorage.getItem(set)).id;
+all_users.password = JSON.parse(localStorage.getItem(set)).password;
     
 
 // add eventlistener to register button of register page
 
 register_page.children[2].children[6].addEventListener("click", function(){
+    var check2 = true;
 
     for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
 
         let prev_type = [];
-        var check2 = true;
 
         if(register_page.children[2].children[i].value == ''){
             if(register_page.children[2].children[i].type == "password"){
@@ -167,7 +175,7 @@ register_page.children[2].children[6].addEventListener("click", function(){
             }
         }
 
-        if(register_page.children[2].children[i].value == "fill this field"){
+        if(register_page.children[2].children[i].value == "fill this field" || register_page.children[2].children[i].value == ""){
             check2 = false;
         }
 
@@ -184,7 +192,6 @@ register_page.children[2].children[6].addEventListener("click", function(){
             }
         })
 
-
 }
 
 if(check2 == true){
@@ -195,7 +202,7 @@ if(check2 == true){
     all_users.password.push(user.password);
  
     
-    localStorage.setItem(a, JSON.stringify(all_users));
+    localStorage.setItem(set, JSON.stringify(all_users));
 
     for(let i=2; i<register_page.children[2].childElementCount - 1; i++){
         register_page.children[2].children[i].value = '';
@@ -219,17 +226,6 @@ login_page.children[1].children[4].addEventListener("click", function(){
             cover_page.removeChild(login_page);
         }
     }
-
-    // if(login_page.children[1].children[2].value == b.id && login_page.children[1].children[3].value == b.password){
-    //     window.location.href="index.html";
-    //     cover_page.style.display = "none";
-    //     alert("You are successfully logged in");
-    //     cover_page.removeChild(login_page);
-    // }
-
-    // if((login_page.children[1].children[2].value != '' && login_page.children[1].children[3].value != '') && (login_page.children[1].children[2].value != "fill this field" && login_page.children[1].children[3].value != "fill this field")){
-    //     // localStorage.setItem()
-    // }
 
     if(login_page.children[1].children[2].value != '' && login_page.children[1].children[2].value != "fill this field"){
         login_page.children[1].children[2].style.color = "red";
@@ -312,35 +308,29 @@ toggle1.addEventListener("click", function(){
     toggle_body.style.transform = "translateX(0px)";
 });
 
-//  Description page 
-let cards = document.querySelectorAll(".card");
-console.log(cards);
 
-let change;
+// *************** for product descripton **************************8
 
-for(let source of cards){
-    source.addEventListener("click", function(){
-        console.log(source);
-        document.location.href = "product.html";   
-    });
+let all_cards = document.querySelectorAll(".card");
+for(let i=0; i<all_cards.length; i++){
+    all_cards[i].children[5].addEventListener("click", ()=>{
+        for(let j=0; j<Object.keys(all_users.cards_object).length; j++){
+            all_users.cards_object[Object.keys(all_users.cards_object)[j]] = all_cards[i].children[j].outerHTML;
+            // console.log(all_cards[i].children[j].outerHTML);
+        }
+
+        // console.log(cards_object);
+
+        localStorage.setItem(set, JSON.stringify(all_users));
+        console.log(all_users);
+        // console.log(JSON.parse(localStorage.getItem(a)));
+        let g = JSON.parse(localStorage.getItem(set));
+        console.log(g);
+
+        document.location.href = "product.html";
+    })
 }
 
-let product_left_div = document.getElementById("product_img");
 
-for(let i=0; i<4; i++){
-    // product_left_div.children[i];
-}
 
-let product_right_div = document.getElementById("product_content");
-
-for(let i=0; i<6; i++){
-    //   product_right_div.children[i];
-}
-
-// ******* saved login ***********
-
-// let saved_users = users ;
-
-// exports.saved_users = users;
-// let saved_users = users;
 

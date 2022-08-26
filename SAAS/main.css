@@ -222,7 +222,6 @@ body {
 }
 #section-2 .container-2 .lower_part .card h5 {
   margin-bottom: 3px;
-  letter-spacing: 2px;
 }
 #section-2 .container-2 .lower_part .card h5 i {
   color: yellow;
@@ -707,13 +706,6 @@ footer p {
   outline: 2px solid rgba(7, 30, 41, 0.2549019608);
   padding-left: 12px;
 }
-.cover_of_login_page .register_page .right ::placeholder {
-  font-size: 16px;
-}
-.cover_of_login_page .register_page .right :active {
-  font-size: 1px;
-  background-color: rgba(7, 30, 41, 0.0274509804);
-}
 .cover_of_login_page .register_page .right button {
   background-color: #071e29;
   color: #11e7ff;
@@ -773,13 +765,6 @@ footer p {
   border-radius: 4px;
   outline: 2px solid rgba(7, 30, 41, 0.2549019608);
   padding-left: 12px;
-}
-.cover_of_login_page .login_page .right ::placeholder {
-  font-size: 16px;
-}
-.cover_of_login_page .login_page .right :active {
-  font-size: 1px;
-  background-color: rgba(7, 30, 41, 0.0274509804);
 }
 .cover_of_login_page .login_page .right button {
   background-color: #071e29;
@@ -1161,4 +1146,43 @@ footer p {
   .container_of_description_section .right div div p {
     font-size: 9px !important;
   }
+}
+#product_content h5 {
+  font-size: 30px;
+}
+#product_content p {
+  font-size: 20px;
+}
+#product_content h6 {
+  font-size: 18px;
+}
+#product_content h6 :nth-child(5) {
+  color: #d4d4d4 !important;
+}
+#product_content h6 i {
+  margin: 10px 3px;
+  color: yellow;
+}
+#product_content b {
+  font-size: 14px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.no_of_items {
+  position: absolute !important;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 17px;
+  background-color: #071719;
+  color: #3f51b5;
+  top: 5px;
+  right: 20px;
+  font-weight: bolder;
+  z-index: 1;
+  border-radius: 50%;
+  font-size: 12px;
+  display: none;
 }
