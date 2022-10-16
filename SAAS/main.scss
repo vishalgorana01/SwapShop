@@ -1,10 +1,10 @@
-*{
+* {
     box-sizing: border-box !important;
     margin: 0px;
     padding: 0px;
 }
 
-body{
+body {
     overflow-x: hidden;
     scroll-behavior: smooth;
 }
@@ -17,51 +17,56 @@ body{
 
 $primary-color : #11e7ff;
 $secondary-color: #071e29;
-$font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+$font : 'Segoe UI',
+Tahoma,
+Geneva,
+Verdana,
+sans-serif;
 /* SECTION-1 :- HOME SECTION */
 
-#home-section{
+#home-section {
 
-    nav{
+    nav {
         max-width: 1560px;
         // background-color: #17324d !important;
         background-color: #071e29 !important;
-        .logo{
+
+        .logo {
             color: $primary-color;
         }
 
-        .toggle{
+        .toggle {
             display: hidden;
             color: white;
             font-size: 26px;
         }
 
-        form{
+        form {
             position: absolute;
             width: calc(100% - 126px);
             left: 122px;
             max-height: 38px !important;
 
-            input{
+            input {
                 background-color: #d4d4d4;
                 width: calc(100% - 390px);
                 margin-right: 0PX !important;
-                border-radius: 0.25rem 0px 0px 0.25rem ;
+                border-radius: 0.25rem 0px 0px 0.25rem;
             }
 
-            button{
+            button {
                 color: $primary-color;
                 width: 145px;
-                border-radius: 0px ;
+                border-radius: 0px;
                 padding: 0px !important;
                 border-color: $primary-color ;
                 border-left: none;
 
-                i{
+                i {
                     margin: 0px 8px;
                 }
 
-                .categories{
+                .categories {
                     // height: 600px;
                     width: 100%;
                     z-index: 1;
@@ -70,12 +75,12 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                     background-color: #d4d4d4;
                     top: 12px !important;
 
-                    ul{
+                    ul {
                         width: 100%;
                         // border: 2px solid rebeccapurple;
                         padding: 0PX !important;
 
-                        li{
+                        li {
                             display: flex;
                             border: 2px solid #0a32441f;
                             align-items: center;
@@ -92,60 +97,74 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             }
         }
 
-        .user{
+        .user {
             color: $primary-color ;
 
-            button{
+            button {
                 border: none;
                 color: $primary-color;
 
-                i{
+                i {
                     margin: 0px 6px;
                     font-size: 23px;
                 }
             }
 
-            button:hover{
+            button:hover {
                 cursor: pointer !important;
             }
         }
     }
 
-    .nav-2{
+    .nav-2 {
         background-color: #0a2c3c !important;
         z-index: -1;
 
-        .bars{
+        .bars {
             color: #11e7ff;
             font-size: 26px;
             z-index: 5;
         }
 
-        #navbarNav ul li a{
+        #navbarNav ul li a {
             color: #11e7ff !important;
         }
     }
 
-    .carousel-indicators button{
+    .carousel-indicators button {
         border-top: 2px solid #071e29 !important;
         border-bottom: 2px solid #071e29 !important;
     }
 
-    .carousel-item{
+    .carousel-item {
         height: calc(100vh - 100px) !important;
 
-        img{
+        img {
             height: 100% !important;
             background-size: cover !important;
         }
 
-        div{
+        div {
             color: #071e29 !important;
         }
     }
 }
 
-.shade{
+#logout{
+
+    span{
+        @include flex_prop();
+        height: 30px;
+        width: 30px;
+        border: 2px solid yellowgreen;
+        border-radius: 50%;
+        background: url("../images/user6.jpg") no-repeat center;
+        background-size: cover;
+        margin-left: 10px;
+    }
+}
+
+.shade {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -159,70 +178,70 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 @media (max-width: 992px) {
 
-    nav{
+    nav {
 
-    .logo{
-        position: absolute;
-        left: 50px;
-    }
+        .logo {
+            position: absolute;
+            left: 50px;
+        }
 
-        form{
+        form {
             width: calc(100% - 10px) !important;
             // width: 100vw !important;
             top: calc(100% + 2px);
             left: 10px !important;
             z-index: 1;
 
-            input{
+            input {
                 width: calc(100% - 210px) !important;
             }
         }
     }
 
-    .nav-2{
+    .nav-2 {
 
-        #navbarNav{
+        #navbarNav {
             display: none;
         }
 
-        .bars{
+        .bars {
             position: relative;
             top: -47px;
         }
     }
-    
+
 }
 
 @media (min-width: 1560px) {
-    #home-section{
+    #home-section {
         margin: 0px calc(50vw - 780px) !important;
     }
 
-    #section-2{
+    #section-2 {
         margin: 0px calc(50vw - 780px) !important;
     }
 
-    #section-3{
+    #section-3 {
         margin: 0px calc(50vw - 780px) !important;
     }
 
-    .section-4{
-        margin: 0px calc(50vw - 780px) !important;
-    }
-    
-    #section-5{
+    .section-4 {
         margin: 0px calc(50vw - 780px) !important;
     }
 
-    footer{
+    #section-5 {
         margin: 0px calc(50vw - 780px) !important;
     }
 
-    .shade{
+    footer {
         margin: 0px calc(50vw - 780px) !important;
     }
-    
-    #description_section{
+
+    .shade {
+        margin: 0px calc(50vw - 780px) !important;
+    }
+
+    #description_section {
         margin: 0px calc(50vw - 780px) !important;
     }
 
@@ -232,46 +251,46 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 //  ******** Section-2 Starts from here **********
 
-#section-2{
+#section-2 {
     @include flex_prop();
     // border: 2px solid black;
     // height: 900px;
     width: 100vw;
     max-width: 1560px;
 
-    .container-2{
+    .container-2 {
         @include flex_prop();
         flex-direction: column;
         height: 100%;
         width: 90%;
         margin-top: 50px;
 
-        .upper_part{
+        .upper_part {
             // border: 2px solid black;
             width: 900px;
             height: auto;
             text-align: center;
             margin-bottom: 50px;
 
-            h1{
+            h1 {
                 letter-spacing: 2px;
                 margin-bottom: 20px;
             }
 
-            p{
+            p {
                 // line-height: ;
                 margin-bottom: 20px;
             }
         }
 
-        .lower_part{
+        .lower_part {
             @include flex_prop();
             flex-wrap: wrap;
             width: 100%;
             // height: 80%;
             // border: 2px solid black;
 
-            .card{
+            .card {
                 @include flex_prop();
                 flex-direction: column;
                 height: auto;
@@ -282,41 +301,41 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 box-shadow: 2px 2px 10px 10px #18151524;
                 overflow: hidden;
 
-                img{
+                img {
                     // width: 250px;
                     height: 230px;
                     // border: 2px solid black;
                 }
 
-                h5{
+                h5 {
                     margin-bottom: 3px;
                     // letter-spacing: 2px;
 
-                    i{
+                    i {
                         color: yellow;
                     }
 
-                    .unrated{
+                    .unrated {
                         color: #d4d4d4;
                     }
                 }
             }
 
-            div{
+            div {
                 @include flex_prop();
                 text-align: center;
                 height: 70px;
                 width: 100%;
                 margin-top: 34px;
 
-                a{
+                a {
                     text-decoration: none;
                     border: 2px solid $secondary-color;
                     height: 90%;
                     border-radius: 8px;
                     width: 250px;
 
-                    h6{
+                    h6 {
                         font-size: 25px;
                         @include flex_prop();
                         // border: 2px solid $secondary-color;
@@ -326,8 +345,8 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                         color: $secondary-color;
                         font-family: $font;
                         margin-bottom: 0px;
-    
-                        i{
+
+                        i {
                             margin: 0px 15px;
                         }
                     }
@@ -337,7 +356,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 }
 
-.front{
+.front {
     @include flex_prop();
     height: 100% !important;
     width: 100%;
@@ -351,7 +370,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0s linear;
 }
 
-.cart{
+.cart {
     position: absolute;
     margin-left: calc(25% - 10px);
     font-size: 40px;
@@ -361,11 +380,11 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.4s;
 }
 
-.cart:hover{
+.cart:hover {
     cursor: pointer;
 }
 
-.share{
+.share {
     position: absolute;
     margin-right: calc(25% - 10px);
     font-size: 40px;
@@ -375,19 +394,19 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     transition: 0.4s;
 }
 
-.share:hover{
+.share:hover {
     cursor: pointer;
 }
 
-.card:hover .share{
+.card:hover .share {
     transform: translateY(0%);
 }
 
-.card:hover .cart{
+.card:hover .cart {
     transform: translateY(0%);
 }
 
-.card:hover .front{
+.card:hover .front {
     transform: translateY(0%);
 }
 
@@ -397,15 +416,15 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 @media (max-width: 930px) {
 
-    .container-2{
+    .container-2 {
         width: 100% !important;
 
-        .upper_part{
+        .upper_part {
             width: 100% !important;
             margin-left: 0px !important;
             margin-right: 0px !important;
 
-            p{
+            p {
                 padding: 0px 10px !important;
             }
         }
@@ -417,7 +436,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 // ******** Section-3 starts from here *******
 
-#section-3{
+#section-3 {
     @include flex_prop();
     // border: 2px solid black;
     // height: 500px;
@@ -426,14 +445,14 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     flex-direction: column;
     overflow-x: hidden;
 
-    .container-3{
+    .container-3 {
         @include flex_prop();
         height: auto;
         width: 90%;
         overflow-x: hidden;
         // border: 2px solid black;
 
-        .left{
+        .left {
             @include flex_prop();
             flex-direction: column;
             align-items: flex-start;
@@ -443,55 +462,55 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 0px 50px;
             z-index: 1;
 
-            h2{
+            h2 {
                 font-size: 50px;
             }
 
-            p{
+            p {
                 margin: 30px 0px;
             }
 
-            button{
+            button {
                 width: 148px;
                 background-color: $secondary-color;
                 color: $primary-color;
 
-                i{
+                i {
                     margin: 0px 10px;
                 }
             }
 
         }
 
-        .right{
+        .right {
             @include flex_prop();
             height: auto;
             width: 50%;
             // border: 2px solid red;
 
-            img{
+            img {
                 height: 400px;
                 width: 850px;
             }
         }
     }
 
-    .container-4{
+    .container-4 {
         flex-direction: row-reverse;
     }
 }
 
 @media (max-width: 1389px) {
-    .container-3{
+    .container-3 {
 
-        .left{
+        .left {
             padding-right: 0px !important;
 
-            h2{
+            h2 {
                 font-size: 40px !important;
             }
 
-            p{
+            p {
                 font-size: 16px !important;
             }
         }
@@ -500,22 +519,22 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
 @media (max-width: 1040px) {
-    .container-3{
+    .container-3 {
 
-        .left{
+        .left {
 
-            h2{
+            h2 {
                 font-size: 34px !important;
             }
 
-            p{
+            p {
                 font-size: 14px !important;
             }
         }
 
-        .right{
+        .right {
 
-            img{
+            img {
                 height: 390px;
                 width: 590px;
             }
@@ -525,11 +544,11 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 
 @media (max-width: 901px) {
-    .container-3{
+    .container-3 {
         flex-direction: column !important;
         margin-top: 50px !important;
 
-        .left{
+        .left {
             padding: 0px auto !important;
             width: 100% !important;
         }
@@ -537,7 +556,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 500px) {
-    #section-3 .container-3 .right img{
+    #section-3 .container-3 .right img {
         height: 250px !important;
         width: 400px !important;
     }
@@ -546,7 +565,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 // ********* Section-3 ends here **********
 
 // ********* Section-3 Starts From here *********
-.section-4{
+.section-4 {
     @include flex_prop();
     // border: 2px solid black;
     // height: 500px;
@@ -556,7 +575,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
     margin-top: 100px;
 
-    .container-4{
+    .container-4 {
         @include flex_prop();
         height: auto;
         width: 90%;
@@ -564,16 +583,16 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         flex-direction: column;
         align-items: flex-start;
 
-        .upper_part{
-            h1{
+        .upper_part {
+            h1 {
                 font-size: 30px !important;
             }
         }
 
-        .splide__list{
+        .splide__list {
             width: 3000px !important;
         }
-    
+
         .splide__slide img {
             vertical-align: bottom;
             height: 250px;
@@ -585,7 +604,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 // ******** Section-4 ends here ***********
 
 // ********** Section starts from here ********
-#section-5{
+#section-5 {
     @include flex_prop();
     // border: 2px solid black;
     // height: 500px;
@@ -596,7 +615,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin-top: 100px;
     background-color: $secondary-color;
 
-    .container-5{
+    .container-5 {
         // @include flex_prop();
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -608,7 +627,7 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         align-items: flex-start;
         // border: 2px solid black;
 
-        .one{
+        .one {
             @include flex_prop();
             flex-direction: column;
             align-items: flex-start;
@@ -619,32 +638,33 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             justify-content: flex-start;
             // color: white;
 
-            h6{
+            h6 {
                 color: $primary-color;
                 font-size: 20px;
                 margin-bottom: 18px;
             }
 
-            ul{
+            ul {
                 @include flex_prop();
                 align-items: flex-start;
                 flex-direction: column;
                 padding: 0px 5px;
 
-                li{
+                li {
                     color: white;
                     margin: 5px 0px;
                     list-style: none;
                     font-size: 14px;
 
-                    a{
+                    a {
                         color: #72a4bc;
                         text-decoration: none;
                     }
                 }
             }
         }
-        .two{
+
+        .two {
             @include flex_prop();
             flex-direction: column;
             align-items: flex-start;
@@ -655,32 +675,33 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             justify-content: flex-start;
             // color: white;
 
-            h6{
+            h6 {
                 color: $primary-color;
                 font-size: 20px;
                 margin-bottom: 18px;
             }
 
-            ul{
+            ul {
                 @include flex_prop();
                 align-items: flex-start;
                 flex-direction: column;
                 padding: 0px 5px;
 
-                li{
+                li {
                     color: white;
                     margin: 5px 0px;
                     list-style: none;
                     font-size: 14px;
 
-                    a{
+                    a {
                         color: #72a4bc;
                         text-decoration: none;
                     }
                 }
             }
         }
-        .three{
+
+        .three {
             @include flex_prop();
             flex-direction: column;
             align-items: flex-start;
@@ -691,29 +712,29 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             justify-content: flex-start;
             // color: white;
 
-            h6{
+            h6 {
                 color: $primary-color;
                 font-size: 18px;
                 margin-bottom: 16px;
             }
 
-            ul{
+            ul {
                 @include flex_prop();
                 align-items: flex-start;
                 flex-direction: column;
                 padding: 0px 5px;
 
-                li{
+                li {
                     color: white;
                     margin: 5px 0px;
                     list-style: none;
                     font-size: 14px;
 
-                    a{
+                    a {
                         color: #72a4bc;
                         text-decoration: none;
 
-                        i{
+                        i {
                             margin: 0px 10px;
                             font-size: 20px
                         }
@@ -721,7 +742,8 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
                 }
             }
         }
-        .four{
+
+        .four {
             @include flex_prop();
             align-items: flex-start;
             flex-direction: column;
@@ -732,26 +754,26 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 25px 0px;
             margin-left: 20px;
 
-            h6{
+            h6 {
                 color: $primary-color;
                 font-size: 18px;
             }
 
-            p{
+            p {
                 color: #72a4bc;
             }
 
-            ul{
+            ul {
                 @include flex_prop();
                 padding: 0px 0px;
 
-                li{
+                li {
                     list-style: none;
 
-                    a{
+                    a {
                         color: white;
 
-                        i{
+                        i {
                             font-size: 20px;
                             margin: 0px 20px;
                         }
@@ -763,18 +785,18 @@ $font : 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media (max-width: 968px) {
-    .container-5{
+    .container-5 {
         grid-template-columns: 1fr 1fr !important;
     }
 }
 
 @media (max-width: 650px) {
-    .container-5{
+    .container-5 {
         grid-template-columns: 1fr !important;
     }
 }
 
-footer{
+footer {
     @include flex_prop();
     height: 50px;
     width: 100vw;
@@ -782,7 +804,7 @@ footer{
     border-top: 2px solid #72a4bc;
     max-width: 1560px;
 
-    p{
+    p {
         font-size: 14px;
         color: #72a4bc;
         margin: 0px 0px;
@@ -793,7 +815,7 @@ footer{
 
 // ************ Login Page ******************
 
-.cover_of_login_page{
+.cover_of_login_page {
     @include flex_prop();
     position: fixed;
     top: 0px;
@@ -809,7 +831,7 @@ footer{
     -webkit-backdrop-filter: blur(9.5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
 
-    .register_page{
+    .register_page {
         position: absolute;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -817,20 +839,20 @@ footer{
         width: 800px;
         border-radius: 12px 0px 12px 0px;
 
-        .left{
+        .left {
             height: 100%;
             // border: 2px solid black;
             width: 100%;
             animation: motion-1 0.4s 0.1s linear 1 forwards;
 
-            img{
-                border-top-left-radius: 12px ;
+            img {
+                border-top-left-radius: 12px;
                 height: 100%;
                 width: 100%;
             }
         }
 
-        .right{
+        .right {
             @include flex_prop();
             flex-direction: column;
             width: 100%;
@@ -844,15 +866,15 @@ footer{
 
             // justify-content: space-between;
 
-            h4{
+            h4 {
                 margin: 50px 0px;
             }
 
-            h6{
-                margin: 0px 0px 30px 0px ;
+            h6 {
+                margin: 0px 0px 30px 0px;
             }
 
-            input{
+            input {
                 margin: 5px 0px;
                 width: 90%;
                 border: none;
@@ -877,7 +899,7 @@ footer{
             //     background-color: #071e2907;
             // }
 
-            button{
+            button {
                 background-color: #071e29;
                 color: #11e7ff;
                 margin-top: 20px;
@@ -885,7 +907,7 @@ footer{
             }
         }
 
-        a{
+        a {
             position: absolute;
             right: 20px;
             top: 10px;
@@ -896,7 +918,7 @@ footer{
         }
     }
 
-    .login_page{
+    .login_page {
         position: absolute;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -905,20 +927,20 @@ footer{
         border-radius: 12px 0px 12px 0px;
         // background-color: rgb(210 213 218 / 74%);
 
-        .left{
+        .left {
             height: 100%;
             // border: 2px solid black;
             width: 100%;
             animation: motion-1 0.4s 0.1s 1 linear forwards;
 
-            img{
-                border-bottom-right-radius: 12px ;
+            img {
+                border-bottom-right-radius: 12px;
                 height: 100%;
                 width: 100%;
             }
         }
 
-        .right{
+        .right {
             @include flex_prop();
             flex-direction: column;
             width: 100%;
@@ -932,15 +954,15 @@ footer{
 
             // justify-content: space-between;
 
-            h4{
+            h4 {
                 margin: 50px 0px;
             }
 
-            h6{
-                margin: 0px 0px 30px 0px ;
+            h6 {
+                margin: 0px 0px 30px 0px;
             }
 
-            input{
+            input {
                 margin: 5px 0px;
                 width: 90%;
                 border: none;
@@ -965,7 +987,7 @@ footer{
             //     background-color: #071e2907;
             // }
 
-            button{
+            button {
                 background-color: #071e29;
                 color: #11e7ff;
                 margin-top: 20px;
@@ -973,7 +995,7 @@ footer{
             }
         }
 
-        a{
+        a {
             position: absolute;
             left: 20px;
             top: 10px;
@@ -987,92 +1009,99 @@ footer{
     }
 
     @keyframes motion-1 {
-        from{
+        from {
             transform: translateY(-100%);
         }
-        to{
+
+        to {
             transform: translateY(0%)
         }
     }
 
     @keyframes motion-2 {
-        from{
+        from {
             transform: translateY(100%);
         }
-        to{
+
+        to {
             transform: translateY(0%);
         }
     }
 
     @keyframes motion-3 {
-        25%{
+        25% {
             opacity: 0;
         }
-        50%{
+
+        50% {
             opacity: 0;
         }
-        75%{
+
+        75% {
             opacity: 0.75;
         }
-        100%{
+
+        100% {
             opacity: 1;
         }
     }
 
     @keyframes motion-4 {
-        from{
+        from {
             transform: translateY(0%);
         }
-        to{
+
+        to {
             transform: translateY(-200%);
         }
     }
 
     @keyframes motion-5 {
-        from{
+        from {
             transform: translateY(0%);
         }
-        to{
+
+        to {
             transform: translateY(200%);
         }
     }
 }
 
 @media (max-width: 900px) {
-    .cover_of_login_page{
+    .cover_of_login_page {
         overflow-y: hidden;
 
-        .login_page{
-            width: 400px !important ;
+        .login_page {
+            width: 400px !important;
             height: 600px !important;
             margin: 0px auto !important;
             grid-template-columns: 1fr !important;
 
-            .left{
+            .left {
                 width: 0px !important;
                 height: 0px !important;
                 display: none;
             }
 
-            .right{
+            .right {
                 width: 100% !important;
                 height: 100% !important;
             }
         }
 
-        .register_page{
-            width: 400px !important ;
+        .register_page {
+            width: 400px !important;
             height: 600px !important;
             margin: 0px auto !important;
             grid-template-columns: 1fr !important;
 
-            .left{
+            .left {
                 width: 0px !important;
                 height: 0px !important;
                 display: none;
             }
 
-            .right{
+            .right {
                 width: 100% !important;
                 height: 100% !important;
             }
@@ -1081,40 +1110,40 @@ footer{
 }
 
 @media (max-width: 550px) {
-    .cover_of_login_page{
+    .cover_of_login_page {
         overflow-y: hidden;
 
-        .login_page{
-            width: 300px !important ;
+        .login_page {
+            width: 300px !important;
             height: 500px !important;
             margin: 0px auto !important;
             grid-template-columns: 1fr !important;
 
-            .left{
+            .left {
                 width: 0px !important;
                 height: 0px !important;
                 display: none;
             }
 
-            .right{
+            .right {
                 width: 100% !important;
                 height: 100% !important;
             }
         }
 
-        .register_page{
-            width: 300px !important ;
+        .register_page {
+            width: 300px !important;
             height: 500px !important;
             margin: 0px auto !important;
             grid-template-columns: 1fr !important;
 
-            .left{
+            .left {
                 width: 0px !important;
                 height: 0px !important;
                 display: none;
             }
 
-            .right{
+            .right {
                 width: 100% !important;
                 height: 100% !important;
             }
@@ -1122,8 +1151,26 @@ footer{
     }
 }
 
+#section_for_sidebar{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    border: 2px solid red;
+    height: 100vh;
+    width: 100vw;
+    margin: 0px auto;
+    overflow-x: hidden;
+    // min-width: 100vw;
+    max-width: 1560px;
+}
+
+@media (min-width: 1560px) {
+    #section_for_sidebar{
+        left: calc(50% - 780px) !important;
+    }
+}
 //  for toggle Button 
-#toggle_body{
+#toggle_body {
     position: fixed;
     left: 0px;
     top: 0px;
@@ -1133,65 +1180,196 @@ footer{
     background-color: $secondary-color;
     // border-right: 2px solid $primary-color;
 
-    .toggle_content{
+    .toggle_content {
         width: 100%;
         // height: 100%;
         // border: 2px solid white;
         @include flex_prop();
         justify-content: flex-start;
 
-        ul{
-            li{
+        ul {
+            li {
                 list-style: none;
                 margin: 20px 0px 20px 15px;
 
-                a{
+                a {
                     color: white;
                     text-decoration: none;
 
-                    i{
+                    i {
                         margin-right: 10px;
                     }
                 }
             }
         }
 
-        #back_mark{
+        #back_mark {
             position: absolute;
             top: 20px;
             right: 40px;
 
-            i{
+            i {
                 color: white;
                 font-size: 26px;
             }
         }
     }
+
 }
 
 @media (max-width: 410px) {
-    #toggle_body{
+    #toggle_body {
         width: 100vw !important;
     }
 }
 
 @media (min-width: 1560px) {
-    #toggle_body{
+    #toggle_body {
         left: calc(50vw - 780px) !important;
     }
 }
 
-#toggle-1 :hover{
+#toggle-1 :hover {
     cursor: pointer !important;
 }
 
-#toggle-2 :hover{
+#toggle-2 :hover {
     cursor: pointer !important;
+}
+
+.toggle_myAccount {
+    @include flex_prop();
+    // display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    height: 100vh;
+    width: 270px;
+    z-index: 3;
+    background-color: $secondary-color;
+    transition: all 0.5s;
+    transform: translateX(-1000%);
+    // border: 2px solid white;
+
+    .one {
+        @include flex_prop();
+        flex-direction: column;
+        width: 100%;
+        // border: 2px solid red;
+        margin-top: 50px;
+
+        .user_img {
+            @include flex_prop();
+            height: 150px;
+            width: 150px;
+            border-radius: 50%;
+            border: 4px solid goldenrod;
+            margin-bottom: 15px;
+            background: url('../images/user6.jpg') center no-repeat;
+            background-size: cover;
+        }
+
+        div {
+            @include flex_prop();
+            width: 100%;
+            // border: 2px solid rebeccapurple;
+            flex-direction: column;
+
+            input {
+                @include flex_prop();
+                text-align: center;
+                width: 80%;
+                background: none;
+                outline: none;
+                border: none;
+                height: 35px;
+                padding-bottom: 0px;
+                // border-bottom: 2px solid white;
+                color: aqua;
+                font-size: 18px;
+            }
+
+            h5 {
+                font-size: 16px;
+                color: aqua;
+            }
+        }
+    }
+
+    label {
+        @include flex_prop();
+        justify-content: flex-start;
+        margin: 6px 0px;
+        width: 100%;
+        padding: 0px 10px 0px 20px;
+
+        input {
+            @include flex_prop();
+            background: none;
+            outline: none;
+            border: none;
+            font-size: 18px;
+            color: #84a9ad;
+        }
+
+        span {
+            @include flex_prop();
+            color: #11e7ff;
+            img {
+                width: 30px;
+                height: 30px;
+                border: 2px solid orange;
+                border-radius: 50%;
+                margin: 0px 2px 0px 5px;
+            }
+        }
+
+        i {
+            margin: 0px 10px 0px 0px;
+            color: #11e7ff;
+        }
+
+
+    }
+}
+
+#back_myAccount{
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 20px;
+    color: white;
+}
+
+#back_myAccount:hover{
+    cursor: pointer;
+}
+
+@media (max-width: 410px) {
+    .toggle_myAccount {
+        width: 100vw !important;
+
+        .one{
+            display: grid !important;
+            padding: 0px 10px;
+            grid-template-columns: 1fr 1.5fr;
+        }
+    }
+
+    
+}
+
+@media (min-width: 1560px) {
+    .toggle_myAccount {
+        left: calc(50vw - 780px) !important;
+    }
 }
 
 
 //  ************ Product Description Page *******************
-#description_section{
+#description_section {
     @include flex_prop();
     width: 100vw;
     justify-content: flex-start !important;
@@ -1199,7 +1377,7 @@ footer{
     max-width: 1560px !important;
     // border: 2px solid black;
 
-    .container_of_description_section{
+    .container_of_description_section {
         width: 98vw;
         max-height: 100vh;
         // border: 2px solid black;
@@ -1210,7 +1388,7 @@ footer{
         scrollbar-width: 0px !important;
         -ms-overflow-style: none !important;
 
-        .left{
+        .left {
             @include flex_prop();
             align-items: flex-start;
             justify-content: flex-start;
@@ -1222,21 +1400,22 @@ footer{
             max-width: 500px;
             // border: 2px solid green;
             top: 0px;
+
             // margin: auto 0px;
-            img{
+            img {
                 // height: 500px;
                 width: 100%;
                 // border: 2px solid red;
             }
 
-            div{
+            div {
                 display: flex;
                 height: auto;
                 width: 98%;
                 margin-top: 25px;
                 justify-content: space-between;
 
-                button{
+                button {
                     height: 50px;
                     width: 300px;
                     color: $primary-color;
@@ -1248,7 +1427,7 @@ footer{
 
         }
 
-        .right{
+        .right {
             // height: 2000px;
             position: sticky;
             top: 0px;
@@ -1260,82 +1439,82 @@ footer{
             justify-content: flex-start;
             padding: 25px 0px 25px 25px;
 
-            h1{
+            h1 {
                 font-size: 36px;
             }
 
-            p{
+            p {
                 // font-size: 16px;
                 font-weight: 500;
             }
 
-            h3{
+            h3 {
                 font-size: 16px;
             }
 
-            h4{
+            h4 {
                 margin-left: 10px;
                 font-size: 28px;
             }
 
-            ul{
-                li{
+            ul {
+                li {
                     list-style: none;
 
-                    i{
+                    i {
                         color: green;
                         margin: 0px 15px 0px 0px;
                     }
                 }
             }
 
-            h6{
+            h6 {
                 font-size: 20px;
             }
 
-            div{
-                display: grid ;
+            div {
+                display: grid;
                 grid-template-columns: 2fr 8fr;
                 height: 150px;
                 // border: 2px solid black;
                 // margin-bottom: 50px;
 
-                img{
+                img {
                     height: 150px;
                     // width: 100px;
                 }
 
-                div{
+                div {
                     @include flex_prop();
                     flex-direction: column;
                     align-items: flex-start;
                     justify-content: flex-start;
 
-                    h6{
+                    h6 {
                         font-size: 17px;
                     }
 
-                    p{
+                    p {
                         font-size: 12px;
                     }
                 }
             }
 
-            .feature-2{
-                grid-template-columns: 8fr 2fr!important;
+            .feature-2 {
+                grid-template-columns: 8fr 2fr !important;
             }
         }
     }
 
-    ::-webkit-scrollbar{
+    ::-webkit-scrollbar {
         display: none;
     }
 }
 
 @media (max-width: 1000px) {
-    .container_of_description_section{
+    .container_of_description_section {
 
-        .right{
+        .right {
             width: 850px !important;
             max-height: fit-content !important;
         }
@@ -1343,23 +1522,23 @@ footer{
 }
 
 @media (max-width: 800px) {
-    .container_of_description_section{
+    .container_of_description_section {
         flex-direction: column;
         width: 100vw !important;
 
-        .left{
+        .left {
             position: relative !important;
             width: 100% !important;
             max-width: none !important;
             justify-content: flex-start !important;
             flex-direction: row !important;
 
-            div{
+            div {
                 flex-direction: column;
                 width: calc(98% - 250px);
             }
 
-            img{
+            img {
                 margin: 10px;
                 width: 250px !important;
             }
@@ -1367,13 +1546,13 @@ footer{
 
         }
 
-        .right{
+        .right {
             width: 100% !important;
             padding: 25px 10px 25px 10px !important;
 
-            div{
+            div {
 
-                img{
+                img {
                     height: 100px !important;
                 }
             }
@@ -1383,22 +1562,22 @@ footer{
 }
 
 @media (max-width: 600px) {
-    .container_of_description_section{
+    .container_of_description_section {
         flex-direction: column;
         width: 100vw !important;
 
-        .left{
+        .left {
             position: relative !important;
             width: 100% !important;
             max-width: none !important;
             justify-content: flex-start !important;
             flex-direction: row !important;
 
-            div{
+            div {
                 flex-direction: column;
                 width: calc(98% - 250px);
 
-                button{
+                button {
                     width: 182px !important;
                 }
             }
@@ -1408,38 +1587,38 @@ footer{
 }
 
 @media (max-width: 470px) {
-    .container_of_description_section{
+    .container_of_description_section {
 
-        .left{
+        .left {
 
             flex-direction: column !important;
 
-            div{
+            div {
                 flex-direction: row !important;
                 margin: 8px auto !important;
             }
 
-            img{
+            img {
                 width: 100% !important;
                 margin: 0px !important;
             }
         }
 
-        .right{
+        .right {
 
-            p{
+            p {
                 font-size: 16px !important;
             }
 
-            .description{
+            .description {
                 font-size: 12px !important;
             }
 
-            div{
-                
-                div{
+            div {
 
-                    p{
+                div {
+
+                    p {
                         font-size: 9px !important;
                     }
                 }
@@ -1449,29 +1628,29 @@ footer{
 }
 
 
-#product_content{
-    h5{
+#product_content {
+    h5 {
         font-size: 30px;
     }
 
-    p{
+    p {
         font-size: 20px;
     }
 
-    h6{
+    h6 {
         font-size: 18px;
 
-        :nth-child(5){
+        :nth-child(5) {
             color: #d4d4d4 !important;
         }
 
-        i{
+        i {
             margin: 10px 3px;
-            color: yellow ;
+            color: yellow;
         }
     }
 
-    b{
+    b {
         font-size: 14px;
         font-weight: bolder;
         margin-bottom: 10px;
@@ -1481,7 +1660,7 @@ footer{
 
 //  ******** added to cart **********
 
-.no_of_items{
+.no_of_items {
     position: absolute !important;
     height: 17px;
     @include flex_prop();

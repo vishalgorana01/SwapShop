@@ -109,6 +109,19 @@ body {
   color: #071e29 !important;
 }
 
+#logout span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border: 2px solid yellowgreen;
+  border-radius: 50%;
+  background: url("../images/user6.jpg") no-repeat center;
+  background-size: cover;
+  margin-left: 10px;
+}
+
 .shade {
   position: absolute;
   width: 100%;
@@ -899,6 +912,23 @@ footer p {
     height: 100% !important;
   }
 }
+#section_for_sidebar {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  border: 2px solid red;
+  height: 100vh;
+  width: 100vw;
+  margin: 0px auto;
+  overflow-x: hidden;
+  max-width: 1560px;
+}
+
+@media (min-width: 1560px) {
+  #section_for_sidebar {
+    left: calc(50% - 780px) !important;
+  }
+}
 #toggle_body {
   position: fixed;
   left: 0px;
@@ -954,6 +984,131 @@ footer p {
   cursor: pointer !important;
 }
 
+.toggle_myAccount {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  height: 100vh;
+  width: 270px;
+  z-index: 3;
+  background-color: #071e29;
+  transition: all 0.5s;
+  transform: translateX(-1000%);
+}
+.toggle_myAccount .one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 50px;
+}
+.toggle_myAccount .one .user_img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 4px solid goldenrod;
+  margin-bottom: 15px;
+  background: url("../images/user6.jpg") center no-repeat;
+  background-size: cover;
+}
+.toggle_myAccount .one div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+}
+.toggle_myAccount .one div input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 80%;
+  background: none;
+  outline: none;
+  border: none;
+  height: 35px;
+  padding-bottom: 0px;
+  color: aqua;
+  font-size: 18px;
+}
+.toggle_myAccount .one div h5 {
+  font-size: 16px;
+  color: aqua;
+}
+.toggle_myAccount label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: flex-start;
+  margin: 6px 0px;
+  width: 100%;
+  padding: 0px 10px 0px 20px;
+}
+.toggle_myAccount label input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  color: #84a9ad;
+}
+.toggle_myAccount label span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #11e7ff;
+}
+.toggle_myAccount label span img {
+  width: 30px;
+  height: 30px;
+  border: 2px solid orange;
+  border-radius: 50%;
+  margin: 0px 2px 0px 5px;
+}
+.toggle_myAccount label i {
+  margin: 0px 10px 0px 0px;
+  color: #11e7ff;
+}
+
+#back_myAccount {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 20px;
+  color: white;
+}
+
+#back_myAccount:hover {
+  cursor: pointer;
+}
+
+@media (max-width: 410px) {
+  .toggle_myAccount {
+    width: 100vw !important;
+  }
+  .toggle_myAccount .one {
+    display: grid !important;
+    padding: 0px 10px;
+    grid-template-columns: 1fr 1.5fr;
+  }
+}
+@media (min-width: 1560px) {
+  .toggle_myAccount {
+    left: calc(50vw - 780px) !important;
+  }
+}
 #description_section {
   display: flex;
   align-items: center;
