@@ -159,6 +159,12 @@ class new_user {
 
 let all_users = [];
 
+if(localStorage.getItem(0) == null){
+    let ever_user = new new_user("Vishal", "Gorana", "abc@gmail.com", "123456", [],"19", "9479853285", "");
+    all_users.push(ever_user);
+    localStorage.setItem(0, JSON.stringify(all_users));
+}
+
 const set = 0;
 
 register_page.children[2].children[6].addEventListener("click", function () {
