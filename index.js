@@ -1,5 +1,14 @@
 console.log("Hello, this is me");
 
+if (localStorage.getItem(2) != null) {
+    let loginUser = JSON.parse(localStorage.getItem(2));
+    let updateLogoutPhoto = document.querySelector("#logout span");
+    updateLogoutPhoto.style.background = `url(${loginUser.photoUrl})`;
+
+    let no_of_item_in_cart = document.querySelector(".no_of_item_in_cart");
+    no_of_item_in_cart.innerHTML = loginUser.cart.length;
+}
+
 let Categories = document.getElementById("Categories");
 let Categories_arrow = document.getElementById("Categories_arrow");
 let ele = document.createElement('div');
@@ -144,6 +153,7 @@ class new_user {
     age;
     phoneNo;
     address;
+    photoUrl = "not";
 
     constructor(givenfirstName, givenlastName, givenemail, givenpassword, givencart, givenAge, givenphoneNo, givenadddress) {
         this.firstName = givenfirstName;
@@ -159,8 +169,8 @@ class new_user {
 
 let all_users = [];
 
-if(localStorage.getItem(0) == null){
-    let ever_user = new new_user("Vishal", "Gorana", "abc@gmail.com", "123456", [],"19", "9479853285", "");
+if (localStorage.getItem(0) == null) {
+    let ever_user = new new_user("Vishal", "Gorana", "abc@gmail.com", "123456", [], "19", "9479853285", "");
     all_users.push(ever_user);
     localStorage.setItem(0, JSON.stringify(all_users));
 }
@@ -251,6 +261,10 @@ login_page.children[1].children[4].addEventListener("click", function () {
             alert("you are successfully logged in");
 
             if (localStorage.getItem(2) != null) {
+                let loginUser = JSON.parse(localStorage.getItem(2));
+                let updateLogoutPhoto = document.querySelector("#logout span");
+                updateLogoutPhoto.style.background = `url(${loginUser.photoUrl})`;
+
                 logout.style.display = "flex";
                 sign_in.style.display = "none";
             }
@@ -376,6 +390,18 @@ toggle_body.children[0].children[0].children[0].addEventListener("click", functi
     }
     else {
         let update_profile = JSON.parse(localStorage.getItem(2));
+        if (update_profile.photoUrl != "") {
+            toggle_myAccount.children[0].children[0].style.background = `url(${update_profile.photoUrl})`;
+            toggle_myAccount.children[0].children[0].style.backgroundSize = "cover";
+            // toggle_myAccount.children[0].children[0].style.background = `url(${update_profile.photoUrl})`;
+
+            let logoutPhoto = document.querySelector("#logout span");
+            logoutPhoto.style.background = `url(${update_profile.photoUrl});`
+        }
+        else {
+
+        }
+
         toggle_myAccount.children[0].children[1].children[0].children[0].value = `${update_profile.firstName} ${update_profile.lastName}`;
         toggle_myAccount.children[1].children[1].value = `${update_profile.email}`;
         toggle_body.children[0].style.display = "none";
@@ -383,42 +409,27 @@ toggle_body.children[0].children[0].children[0].addEventListener("click", functi
     }
 });
 
+
+
 let back_myAccount = document.querySelector("#back_myAccount");
 back_myAccount.addEventListener("click", function () {
     toggle_myAccount.style.transform = "translateX(-1000%)";
     toggle_body.children[0].style.display = "flex";
 })
 
+let toggle_settings = document.querySelector('.toggle_settings');
+toggle_body.children[0].children[0].children[8].addEventListener('click', () => {
+    console.log("hello");
+    console.log(toggle_settings);
+    toggle_settings.style.transition = 'all 0.5s ease-in';
+    toggle_settings.style.transform = 'translateX(0px)';
+})
 
-// *************** for product descripton **************************8
-
-// let all_cards = document.querySelectorAll(".card");
-// for (let i = 0; i < all_cards.length; i++) {
-//     all_cards[i].children[5].addEventListener("click", () => {
-//         for (let j = 0; j < Object.keys(all_users.cards_object).length; j++) {
-//             all_users.cards_object[Object.keys(all_users.cards_object)[j]] = all_cards[i].children[j].outerHTML;
-//             // console.log(all_cards[i].children[j].outerHTML);
-//         }
-
-//         // console.log(cards_object);
-
-//         localStorage.setItem(set, JSON.stringify(all_users));
-//         console.log(all_users);
-//         // console.log(JSON.parse(localStorage.getItem(a)));
-//         let g = JSON.parse(localStorage.getItem(set));
-//         console.log(g);
-
-//         document.location.href = "product.html";
-//     })
-
-//     all_cards[i].children[6].addEventListener("click", () => {
-//         if (!(all_users.added_cart.includes(all_cards[i].innerHTML))) {
-//             all_users.added_cart.push(all_cards[i].innerHTML);
-//         }
-//         localStorage.setItem(set, JSON.stringify(all_users));
-//     })
-// }
-
+let back_settings = document.querySelector("#back_settings");
+back_settings.addEventListener('click', () => {
+    toggle_settings.style.transition = 'all 0.8s ease-out';
+    toggle_settings.style.transform = 'translateX(-1000%)';
+})
 
 // *********************************** cart addded ************************
 class carts {
@@ -469,6 +480,8 @@ for (let i = 0; i < all_cards.length; i++) {
                     find_current.splice(j, 1);
 
                     find_current.push(current_customer);
+                    let no_of_item_in_cart = document.querySelector(".no_of_item_in_cart");
+                    no_of_item_in_cart.innerHTML = current_customer.cart.length;
                     localStorage.setItem(0, JSON.stringify(find_current));
                     localStorage.setItem(2, JSON.stringify(current_customer));
                 }
@@ -477,6 +490,18 @@ for (let i = 0; i < all_cards.length; i++) {
 
         }
 
+    });
+
+    all_cards[i].children[5].addEventListener("click", function () {
+        let id_of_card = all_cards[i].getAttribute("id");
+        console.log(id_of_card);
+        let check = true;
+
+        localStorage.setItem("id_of_shoe", id_of_card);
+        all_cards[i]
+
+        document.location.href = "product.html";
+        
     })
 
 }
@@ -490,6 +515,7 @@ let cart_icon = document.querySelector("#cart_icon");
 console.log(cart_icon);
 
 cart_icon.addEventListener("click", function () {
+
     if (localStorage.getItem(2) == null) {
         cover_page.style.display = "flex";
         cover_page.appendChild(login_page);

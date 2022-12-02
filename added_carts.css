@@ -15,7 +15,7 @@ body{
     /* border: 2px solid black; */
     /* height: auto; */
     width: 100vw;
-    margin-top: 50px !important;
+    margin-top: 150px !important;
     max-width: 1560px;
     margin: 0% auto;
 }
@@ -471,5 +471,21 @@ body{
 @media (max-width: 500px) {
     .inside-right-added-cart{
         padding: 20px 20px ;
+    }
+
+    .left-added-cart .two {
+        grid-template-columns: 1.8fr 1.2fr 1fr;
+    }
+
+    .total-price{
+        display: none;
+    }
+
+    .left-added-cart .third {
+        grid-template-columns: 1.8fr 1.2fr 1fr;
+    }
+
+    .product_total_price{
+        display: none;
     }
 }

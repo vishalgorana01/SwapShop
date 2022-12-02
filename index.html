@@ -21,6 +21,13 @@
   <!-- Link to the file hosted on your server, -->
   <link rel="stylesheet" href="path-to-the-file/splide.min.css">
 
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100&family=Poppins:ital,wght@0,200;0,300;1,200;1,300&family=Tiro+Devanagari+Hindi:ital@0;1&display=swap"
+    rel="stylesheet">
+
 
   <!-- or link to the CDN -->
   <link rel="stylesheet" href="url-to-cdn/splide.min.css">
@@ -37,7 +44,7 @@
 
   <section id="home-section">
     <div class="shade" style="z-index: 0;"></div>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1;">
+    <nav style="position: fixed !important; width: 100vw !important; top: 0px; z-index: 2;" class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a class="navbar-brand logo" href="index.html">SwapShop</a>
         <div class="toggle"><i class="fa-solid fa-bars" id="toggle-1"></i>
@@ -56,14 +63,16 @@
               class="fa-solid fa-user"></i></button>
           <!-- <button class="btn btn-outline-success" type="submit" id="logout">LogOut<i
               class="fa-solid fa-user"></i></button> -->
-              <button class="btn btn-outline-success" type="submit" id="logout">LogOut<span></span></button>
-          <button class="btn btn-outline-success" type="submit"><a id="cart_icon"><i
-                class="fa-solid fa-cart-shopping"></i></a></button>
+          <button class="btn btn-outline-success" type="submit" id="logout">LogOut<span></span></button>
+          <button style="position: relative;" class="btn btn-outline-success" type="submit"><a id="cart_icon"><i
+                class="fa-solid fa-cart-shopping"></i></a>
+                <span class="no_of_item_in_cart" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; position: absolute; top:-2px; right: 8px; height: 20px; width: 20px; background-color: #313838; color: #11dcf4;" >0</span>
+              </button>
         </div>
 
     </nav>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-da nav-2" style="z-index: 0;">
+    <nav style="position: fixed !important; width: 100vw !important; top: 58px; z-index: 1;" class="navbar navbar-expand-lg navbar-light bg-da nav-2">
       <div class="container-fluid">
         <i class="fa-solid fa-bars bars" id="toggle_2"></i>
         <!-- <div id="on-toggle"></div> -->
@@ -149,7 +158,7 @@
           laboriosam modi natus!</P>
       </div>
       <div class="lower_part">
-        <div class="card">
+        <div class="card" id="1">
           <img src="./images/beautiful-luxury-casual-leather-men-shoes.jpg" alt="">
           <h5>Adidas mens drongo</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -162,7 +171,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="2">
           <img src="./images/brown-shoes-isolated-white-background.jpg" alt="">
           <h5>Campus Running</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -174,7 +183,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="3">
           <img src="./images/shoe1.jpg" alt="">
           <h5>Sparx soprts</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -186,7 +195,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="4">
           <img src="./images/shoe2.jpg" alt="">
           <h5>Adidas men's lite</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -199,7 +208,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="5">
           <img src="./images/shoe10.jpg" alt="">
           <h5>Adidas work shoe</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -211,7 +220,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="6">
           <img src="./images/shoe8.jpg" alt="">
           <h5>Nike fashion shoe</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -223,7 +232,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="7">
           <img src="./images/shoe3.jpg" alt="">
           <h5>Ballet shoe</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -235,7 +244,7 @@
           <i class="fa-solid fa-share-nodes share"></i>
         </div>
 
-        <div class="card">
+        <div class="card" id="8">
           <img src="./images/shoes.jpg" alt="">
           <h5>Reebok running</h5>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -394,23 +403,42 @@
 
   <div class="toggle_myAccount">
     <div class="one">
-      <span class="user_img"></span>
+      <input type="file" accept="image/*" class="user_img" />
       <div>
-        <div><input type="text" placeholder="full Name"></div>
-        <h5>19 years</h5>
+        <div><input type="text" placeholder="full Name" readonly></div>
+        <!-- <h5>19 years</h5> -->
       </div>
     </div>
 
-    <label><i class="fa-solid fa-envelope"></i><input type="email" placeholder="enter your email"></label>
-    <label><i class="fa-solid fa-phone"></i><span><img src="./images/india (1).png" alt="error loading">+91<i
-          class="fa-solid fa-caret-down"></i></span><input type="number" placeholder="96785 78965"></label>
-    <label><i class="fa-solid fa-location-dot"></i><input type="email" placeholder="address"></label>
+    <label><i class="fa-solid fa-envelope"></i><input type="email" placeholder="enter your email" readonly></label>
+    <!-- <label><i class="fa-solid fa-phone"></i><span><img src="./images/india (1).png" alt="error loading">+91<i -->
+          <!-- class="fa-solid fa-caret-down"></i></span><input type="number" placeholder="96785 78965"></label> -->
+    <!-- <label><i class="fa-solid fa-location-dot"></i><input type="email" placeholder="address"></label> -->
 
     <a id="back_myAccount"><i class="fa-solid fa-arrow-left"></i></a>
   </div>
 
+  <div class="toggle_settings">
+    <div>
+      <h2>Settings</h2>
+      <ul>
+        <!-- <li>logout</li> -->
+        <li class="delete">delete my account</li>
+      </ul>
+    </div>
+
+    <a id="back_settings"><i class="fa-solid fa-arrow-left"></i></a>
+
+  </div>
+
   <div class="no_of_items"></div>
   <!-- </section> -->
+
+  <div class="imageUploader">
+    <div class="ring">Uploading
+      <span></span>
+    </div>
+  </div>
 
   <script>
     document.addEventListener('DOMContentLoaded', function () {
@@ -426,9 +454,93 @@
 
   </script>
 
+  <script type="module">
+    let user_img = document.querySelector('.user_img');
+    user_img.addEventListener("change", (e) => {
+      uploadimage(e);
+    })
+    function uploadimage(e) {
+      console.log(e.target.files[0]);
 
+      uploadimage2(e.target.files[0]);
+    }
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-app.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyByQTrnzot26aIYvJydbQaqgOjkoLJJ458",
+      authDomain: "swapshop-8519e.firebaseapp.com",
+      projectId: "swapshop-8519e",
+      storageBucket: "swapshop-8519e.appspot.com",
+      messagingSenderId: "71972693158",
+      appId: "1:71972693158:web:74acf7752fd154352f8067"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+
+    import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-storage.js"
+    const storage = getStorage(app);
+
+    function uploadimage2(eurl) {
+      let imageUploader = document.querySelector(".imageUploader");
+      imageUploader.style.display = "flex";
+      let email = JSON.parse(localStorage.getItem(2)).email;
+      const storageRef = ref(storage, `images/${email}`);
+      uploadBytes(storageRef, eurl).then((snapshot) => {
+        console.log('Uploaded a blob or file!');
+      });
+
+
+      const uploadTask = uploadBytesResumable(storageRef, eurl);
+      uploadTask.on('state_changed',
+        (snapshot) => {
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          console.log('Upload is ' + progress + '% done');
+          if (progress == '100') {
+            imageUploader.style.display = "none";
+            // alert("uploaded");
+          }
+        },
+        (error) => {
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+            console.log('File available at', downloadURL);
+            let updateLogoutPhoto = document.querySelector("#logout span");
+            updateLogoutPhoto.style.background = `url(${downloadURL})`;
+
+            let myAccountProfile = document.querySelector(".user_img");
+            myAccountProfile.style.background = `url(${downloadURL})`;
+
+            let current_customer = JSON.parse(localStorage.getItem(2));
+            let find_current = JSON.parse(localStorage.getItem(0));
+
+            for (let j = 0; j < find_current.length; j++) {
+              if (current_customer.email == find_current[j].email) {
+                // console.log(all_cards[i].innerHTML);
+
+                current_customer.photoUrl = downloadURL;
+                find_current.splice(j, 1);
+
+                find_current.push(current_customer);
+                localStorage.setItem(0, JSON.stringify(find_current));
+                localStorage.setItem(2, JSON.stringify(current_customer));
+              }
+            }
+          });
+        }
+      );
+    }
+  </script>
+
+  <script>
+
+  </script>
   <!--  link to JavaScript  -->
   <script src="./index.js" type="module"></script>
+
+
   <!-- <script src="./users_data.js" type="module"></script> -->
 
 

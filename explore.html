@@ -21,7 +21,7 @@
   <body>
 
     <section id="home-section">
-          <nav class="navbar navbar-expand-lg navbar-light bg-light" style="z-index: 1;">
+          <nav style="position: fixed !important; width: 100vw !important; top: 0px; z-index: 2;" class="navbar navbar-expand-lg navbar-light bg-light"">
               <div class="container-fluid">
                 <a class="navbar-brand logo" href="index.html">SwapShop</a>
                 <div class="toggle"><i class="fa-solid fa-bars" id="toggle-1"></i>
@@ -37,12 +37,14 @@
                 <div class="d-flex user" style="z-index: 2;">
                   <button class="btn btn-outline-success" type="submit" id="sign_in">Sign in<i class="fa-solid fa-user"></i></button>
                   <button class="btn btn-outline-success" type="submit" id="logout">LogOut<span></span></button>
-                  <button class="btn btn-outline-success" type="submit"><a id="cart_icon"><i class="fa-solid fa-cart-shopping"></i></a></button>
+                  <button style="position: relative;" class="btn btn-outline-success" type="submit"><a href="added_carts.html" id="cart_icon"><i style="color: #09c7ff;" class="fa-solid fa-cart-shopping"></i></a>
+                    <span class="no_of_item_in_cart" style="display: flex; align-items: center; justify-content: center; border-radius: 50%; position: absolute; top:-2px; right: 8px; height: 20px; width: 20px; background-color: #313838; color: #11dcf4;" >0</span>
+                  </button>
                 </div>
   
             </nav>
   
-            <nav class="navbar navbar-expand-lg navbar-light bg-da nav-2" style="z-index: 0;">
+            <nav style="position: fixed !important; width: 100vw !important; top: 58px; z-index: 1;" class="navbar navbar-expand-lg navbar-light bg-da nav-2">
               <div class="container-fluid">
                 <i class="fa-solid fa-bars bars" id = "toggle_2"></i>
                 <!-- <div id="on-toggle"></div> -->
@@ -83,7 +85,7 @@
 <!--  ********************** Sneakers ******************************** -->
             <div id="Sneakers" class="shoes_heading">Sneakers</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="9">
                     <img src="./images/shoe9.jpg" alt="">
                     <h5>Sneaker's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -94,7 +96,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="10">
                     <img src="./images/shoe8.jpg" alt="">
                     <h5>Sneaker's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -105,7 +107,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="11">
                     <img src="./images/shoe7.jpg" alt="">
                     <h5>Sneaker's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -116,7 +118,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="12">
                     <img src="./images/shoe6.jpg" alt="">
                     <h5>Sneaker's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -127,7 +129,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="13">
                     <img src="./images/shoe5.jpg" alt="">
                     <h5>Sneaker's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -144,7 +146,7 @@
 <!--  ********************** Formals ********************************8 -->
             <div id="Formals" class="shoes_heading">Formals</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="14">
                     <img src="./images/shoe4.jpg" alt="">
                     <h5>Formal's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -155,7 +157,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="15">
                     <img src="./images/shoe3.jpg" alt="">
                     <h5>Formal's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -166,7 +168,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="16">
                     <img src="./images/shoe2.jpg" alt="">
                     <h5>Formal's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -177,7 +179,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="17">
                     <img src="./images/shoe10.jpg" alt="">
                     <h5>Formal's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -188,7 +190,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="18">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Formal's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -205,7 +207,7 @@
 <!--  ********************** Sports ********************************8 -->
             <div id="Sports" class="shoes_heading">Sports</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="19">
                     <img src="./images/shoe4.jpg" alt="">
                     <h5>Sports shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -216,7 +218,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="20">
                     <img src="./images/shoe5.jpg" alt="">
                     <h5>Sports shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -227,7 +229,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="21">
                     <img src="./images/shoe6.jpg" alt="">
                     <h5>Sports shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -238,7 +240,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="22">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Sports shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -249,7 +251,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="23">
                     <img src="./images/shoe4.jpg" alt="">
                     <h5>Sports shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -266,7 +268,7 @@
 <!--  ********************** School shoes ********************************8 -->
             <div id="school_shoes" class="shoes_heading">School Shoes</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="24">
                     <img src="./images/pair-trainers.jpg" alt="">
                     <h5>School's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -277,7 +279,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="25">
                     <img src="./images/shoe9.jpg" alt="">
                     <h5>School's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -288,7 +290,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="26">
                     <img src="./images/shoe7.jpg" alt="">
                     <h5>School's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -299,7 +301,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="27">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>School's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -310,7 +312,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="28">
                     <img src="./images/shoe6.jpg" alt="">
                     <h5>School's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -327,7 +329,7 @@
 <!--  ********************** Men's ********************************8 -->
             <div id="Mens" class="shoes_heading">Men's shoes</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="29">
                     <img src="./images/beautiful-luxury-casual-leather-men-shoes.jpg" alt="">
                     <h5>Men's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -338,7 +340,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="30">
                     <img src="./images/shoe7.jpg" alt="">
                     <h5>Men's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -349,7 +351,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="31">
                     <img src="./images/pair-trainers.jpg" alt="">
                     <h5>Men's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -360,7 +362,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="32">
                     <img src="./images/shoe9.jpg" alt="">
                     <h5>Men's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -371,7 +373,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="33">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Men's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -388,7 +390,7 @@
 <!-- ********** kids ***************** -->
 <div id="kids_shoes" class="shoes_heading">Kid's Shoes</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="34">
                     <img src="./images/fashion-shoes-sneakers.jpg" alt="">
                     <h5>Kid's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -399,7 +401,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="35">
                     <img src="./images/brown-shoes-isolated-white-background.jpg" alt="">
                     <h5>Kid's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -410,7 +412,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="36">
                     <img src="./images/pair-trainers.jpg" alt="">
                     <h5>Kid's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -421,7 +423,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="37">
                     <img src="./images/shoe5.jpg" alt="">
                     <h5>Kid's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -432,7 +434,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="38">
                     <img src="./images/shoe4.jpg" alt="">
                     <h5>Kid's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -449,7 +451,7 @@
 <!-- ********* Boys ************* -->
             <div id="Boys_shoes" class="shoes_heading">Boy's Shoes</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="39">
                     <img src="./images/shoe8.jpg" alt="">
                     <h5>Boy's shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -460,7 +462,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="40">
                     <img src="./images/shoe9.jpg" alt="">
                     <h5>Boy's shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -471,7 +473,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="41">
                     <img src="./images/shoe3.jpg" alt="">
                     <h5>Boy's shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -482,7 +484,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="42">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Boy's shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -493,7 +495,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="43">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Boy's shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -510,7 +512,7 @@
 <!-- ************ Girls *************** -->
             <div id="Girls_shoe" class="shoes_heading">Girl's Shoes</div>
             <div class="lower_part">
-                <div class="card">
+                <div class="card" id="44">
                     <img src="./images/beautiful-luxury-casual-leather-men-shoes.jpg" alt="">
                     <h5>Girls shoe 1</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -521,7 +523,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card">
+                <div class="card" id="45">
                     <img src="./images/brown-shoes-isolated-white-background.jpg" alt="">
                     <h5>Girls shoe 2</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -532,7 +534,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card">
+                <div class="card" id="46">
                     <img src="./images/shoe3.jpg" alt="">
                     <h5>Girls shoe 3</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -543,7 +545,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
                 
-                <div class="card none">
+                <div class="card none" id="47">
                     <img src="./images/shoes.jpg" alt="">
                     <h5>Girls shoe 4</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -554,7 +556,7 @@
                     <i class="fa-solid fa-share-nodes share " style="font-size:30px; margin-right:25%"></i>
                 </div>
 
-                <div class="card none">
+                <div class="card none" id="48">
                     <img src="./images/shoe5.jpg" alt="">
                     <h5>Girls shoe 5</h5>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -636,15 +638,15 @@
     <div class="one">
       <span class="user_img"></span>
       <div>
-        <div><input type="text" placeholder="full Name"></div>
+        <div><input type="text" placeholder="full Name" readonly></div>
         <h5>19 years</h5>
       </div>
     </div>
 
-    <label><i class="fa-solid fa-envelope"></i><input type="email" placeholder="enter your email"></label>
-    <label><i class="fa-solid fa-phone"></i><span><img src="./images/india (1).png" alt="error loading">+91<i
-          class="fa-solid fa-caret-down"></i></span><input type="number" placeholder="96785 78965"></label>
-    <label><i class="fa-solid fa-location-dot"></i><input type="email" placeholder="address"></label>
+    <label><i class="fa-solid fa-envelope"></i><input type="email" placeholder="enter your email" readonly></label>
+    <!-- <label><i class="fa-solid fa-phone"></i><span><img src="./images/india (1).png" alt="error loading">+91<i -->
+          <!-- class="fa-solid fa-caret-down"></i></span><input type="number" placeholder="96785 78965"></label> -->
+    <!-- <label><i class="fa-solid fa-location-dot"></i><input type="email" placeholder="address"></label> -->
 
     <a id="back_myAccount"><i class="fa-solid fa-arrow-left"></i></a>
   </div>
