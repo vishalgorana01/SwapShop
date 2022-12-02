@@ -500,7 +500,7 @@ for (let i = 0; i < all_cards.length; i++) {
         localStorage.setItem("id_of_shoe", id_of_card);
         all_cards[i]
 
-        document.location.href = "product.html";
+        // document.location.href = "product.html";
         
     })
 
